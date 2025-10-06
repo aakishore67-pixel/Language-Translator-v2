@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Translator</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <h1>🌐 Language Translator</h1>
+  
+  <div class="upload-section">
+    <label for="fileUpload" class="file-upload-label">
+      📁 Upload Text File
+    </label>
+    <input type="file" id="fileUpload" accept=".txt,.doc,.docx" onchange="handleFileUpload(event)">
+    
+    <button class="voice-button" id="voiceBtn" onclick="toggleVoiceRecognition()">
+      🎤 Start Voice Input
+    </button>
+  </div>
+
+  <textarea id="inputText" rows="4" placeholder="Enter text to translate or upload a file..."></textarea><br>
+  <select id="sourceLang">
+    <option value="en">English</option>
+    <option value="ta">Tamil</option>
+    <option value="te">Telugu</option>
+    <option value="ml">Malayalam</option>
+    <option value="hi">Hindi</option>
+    <option value="pa">Punjabi</option>
+    <option value="ur">Urdu</option>
+    <option value="ar">Arabic</option>
+    <option value="de">German</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+  </select>
+  
+  ➡️
+  <select id="targetLang">
+    <option value="ta">Tamil</option>
+    <option value="en">English</option>
+    <option value="te">Telugu</option>
+    <option value="ml">Malayalam</option>
+    <option value="hi">Hindi</option>
+    <option value="pa">Punjabi</option>
+    <option value="ur">Urdu</option>
+    <option value="ar">Arabic</option>
+    <option value="de">German</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+  </select><br><br>
+  <button onclick="translateText()">Translate</button>
+
+  <div id="output"></div>
+  
+  <button class="speak-button" id="speakBtn" onclick="speakTranslatedText()" style="display: none;">
+    🔊 Read Aloud
+  </button>
+
+  <div class="help-text">
+    <p>Not hearing audio? Check:</p>
+    <ul>
+      <li>✓ Volume is turned up</li>
+      <li>✓ Browser has permission to play audio</li>
+      <li>✓ Not in silent/mute mode</li>
+    </ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
